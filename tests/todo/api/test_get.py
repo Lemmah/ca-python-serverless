@@ -87,7 +87,7 @@ class TestGetAPI(unittest.TestCase):
         assert 'statusCode' in results and results['statusCode'] == '200'
         # Verify the contents of the body
         assert 'body' in results
-        body = json.loads(results['body'])
+        body = json.loads(results['body'])[0]
         # Verify that the UUIDs were set
         assert body['userId'] == '1'
         assert body['todoId'] and len(body['todoId']) == 36
